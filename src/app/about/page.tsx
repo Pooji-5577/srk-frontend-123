@@ -1,6 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Users, Target, Award, BookOpen } from 'lucide-react';
+import { Users, Target, BookOpen } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -26,7 +26,7 @@ export default function AboutPage() {
             <div className="bg-white rounded-lg shadow-xl p-8 mb-12">
               <h2 className="text-3xl font-bold text-blue-600 mb-6 text-center">Our Mission</h2>
               <p className="text-lg text-gray-700 leading-relaxed text-center">
-                "I measure the progress of a community by the degree of progress which women have achieved."
+                &ldquo;I measure the progress of a community by the degree of progress which women have achieved.&rdquo;
                 <span className="block mt-4 text-blue-600 font-semibold">- B. R. Ambedkar</span>
               </p>
             </div>

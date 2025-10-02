@@ -82,7 +82,7 @@ export default function DonatePage() {
       } else {
         setSubmitMessage('There was an error processing your request. Please try again.');
       }
-    } catch (error) {
+    } catch {
       setSubmitMessage('There was an error processing your request. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -98,7 +98,7 @@ export default function DonatePage() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Make a Donation</h1>
           <p className="text-xl md:text-2xl mb-8">
-            Support education and make a difference in students' lives
+            Support education and make a difference in students&apos; lives
           </p>
         </div>
       </section>
@@ -216,7 +216,7 @@ export default function DonatePage() {
               <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
                 <p className="text-sm text-gray-700">
                   <strong>Cheque/Draft will be made in favour of:</strong><br />
-                  "{bankingDetails.chequeInFavour}"
+                  &ldquo;{bankingDetails.chequeInFavour}&rdquo;
                 </p>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function DonatePage() {
             </h2>
             
             <p className="text-gray-600 mb-6">
-              Fill out this form to let us know about your donation. We'll keep a record and send you acknowledgment.
+              Fill out this form to let us know about your donation. We&apos;ll keep a record and send you acknowledgment.
             </p>
 
             <form onSubmit={handleDonationSubmit} className="space-y-6">

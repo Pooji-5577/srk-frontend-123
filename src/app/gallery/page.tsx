@@ -153,7 +153,7 @@ export default function GalleryPage() {
             <h2 className="text-2xl font-bold mb-4">Gallery Images from Supabase Storage</h2>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               Our gallery showcases vibrant educational activities of SRKE Educational Society. 
-              All {galleryImages.length} images are stored in Supabase storage bucket 'srk' with automatic optimization.
+              All {galleryImages.length} images are stored in Supabase storage bucket &lsquo;srk&rsquo; with automatic optimization.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <div className="flex items-center gap-2">

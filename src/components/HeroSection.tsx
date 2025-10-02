@@ -14,7 +14,7 @@ export default function HeroSection() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Quote */}
           <blockquote className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-8 leading-tight">
-            "I measure the progress of a community by the degree of progress which women have achieved."
+            &ldquo;I measure the progress of a community by the degree of progress which women have achieved.&rdquo;
           </blockquote>
           
           {/* Attribution */}

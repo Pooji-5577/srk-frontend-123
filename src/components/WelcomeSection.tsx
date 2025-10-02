@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function WelcomeSection() {
   return (
     <section className="py-16 bg-white">

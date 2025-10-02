@@ -182,8 +182,8 @@ export default function JoinUsPage() {
                     <option value="">----- Select a Qualification / Studying-----</option>
                     <option value="High School">High School</option>
                     <option value="Intermediate">Intermediate</option>
-                    <option value="Bachelor's Degree">Bachelor's Degree</option>
-                    <option value="Master's Degree">Master's Degree</option>
+                    <option value="Bachelor's Degree">Bachelor&apos;s Degree</option>
+                    <option value="Master's Degree">Master&apos;s Degree</option>
                     <option value="PhD">PhD</option>
                     <option value="Diploma">Diploma</option>
                     <option value="Certificate Course">Certificate Course</option>

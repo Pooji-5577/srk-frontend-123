@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Award, Heart, UserPlus } from 'lucide-react';
 
 export default function FeaturedAwardsSection() {
