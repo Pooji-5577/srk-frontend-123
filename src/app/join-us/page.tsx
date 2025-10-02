@@ -78,24 +78,24 @@ export default function JoinUsPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-green-500 to-orange-500 text-white py-16">
+      <section className="bg-gradient-to-br from-blue-600 via-green-500 to-orange-500 text-white py-12 md:py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Join Our Mission</h1>
-          <p className="text-xl md:text-2xl mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">Join Our Mission</h1>
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 px-4">
             Be part of our educational journey and make a difference in the community
           </p>
         </div>
       </section>
 
       {/* Join Us Form */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="bg-white rounded-lg shadow-xl p-8">
-            <h2 className="text-3xl font-bold text-blue-600 mb-8 text-center">Join Us</h2>
+          <div className="bg-white rounded-lg shadow-xl p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mb-6 md:mb-8 text-center">Join Us</h2>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               {/* Type Selection */}
-              <div className="flex space-x-6 mb-6">
+              <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-3 sm:space-y-0 mb-4 md:mb-6">
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <input
                     type="radio"
@@ -105,7 +105,7 @@ export default function JoinUsPage() {
                     onChange={() => handleTypeChange('Students')}
                     className="w-4 h-4 text-blue-600"
                   />
-                  <span className="text-lg font-medium text-gray-700">Students</span>
+                  <span className="text-base md:text-lg font-medium text-gray-700">Students</span>
                 </label>
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <input
@@ -116,13 +116,13 @@ export default function JoinUsPage() {
                     onChange={() => handleTypeChange('Faculty/Others')}
                     className="w-4 h-4 text-blue-600"
                   />
-                  <span className="text-lg font-medium text-gray-700">Faculty/Others</span>
+                  <span className="text-base md:text-lg font-medium text-gray-700">Faculty/Others</span>
                 </label>
               </div>
 
               {/* Name */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-                <label className="text-lg font-medium text-gray-700">Name</label>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
+                <label className="text-base md:text-lg font-medium text-gray-700">Name</label>
                 <div className="md:col-span-2">
                   <input
                     type="text"
@@ -130,15 +130,15 @@ export default function JoinUsPage() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors text-sm md:text-base"
                     placeholder="Enter your full name"
                   />
                 </div>
               </div>
 
               {/* Email */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-                <label className="text-lg font-medium text-gray-700">Email address</label>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
+                <label className="text-base md:text-lg font-medium text-gray-700">Email address</label>
                 <div className="md:col-span-2">
                   <input
                     type="email"
@@ -146,15 +146,15 @@ export default function JoinUsPage() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors text-sm md:text-base"
                     placeholder="Enter your email address"
                   />
                 </div>
               </div>
 
               {/* Contact No */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-                <label className="text-lg font-medium text-gray-700">Contact No</label>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
+                <label className="text-base md:text-lg font-medium text-gray-700">Contact No</label>
                 <div className="md:col-span-2">
                   <input
                     type="tel"
@@ -162,22 +162,22 @@ export default function JoinUsPage() {
                     value={formData.contactNo}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors text-sm md:text-base"
                     placeholder="Enter your contact number"
                   />
                 </div>
               </div>
 
               {/* Qualification/Studying */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-                <label className="text-lg font-medium text-gray-700">Qualification / Studying</label>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
+                <label className="text-base md:text-lg font-medium text-gray-700">Qualification / Studying</label>
                 <div className="md:col-span-2">
                   <select
                     name="qualification"
                     value={formData.qualification}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors bg-white"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors bg-white text-sm md:text-base"
                   >
                     <option value="">----- Select a Qualification / Studying-----</option>
                     <option value="High School">High School</option>
@@ -193,38 +193,38 @@ export default function JoinUsPage() {
               </div>
 
               {/* Specialization */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-                <label className="text-lg font-medium text-gray-700">Specialization</label>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
+                <label className="text-base md:text-lg font-medium text-gray-700">Specialization</label>
                 <div className="md:col-span-2">
                   <input
                     type="text"
                     name="specialization"
                     value={formData.specialization}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors text-sm md:text-base"
                     placeholder="Enter your field of specialization"
                   />
                 </div>
               </div>
 
               {/* College Name */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-                <label className="text-lg font-medium text-gray-700">College Name</label>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
+                <label className="text-base md:text-lg font-medium text-gray-700">College Name</label>
                 <div className="md:col-span-2">
                   <input
                     type="text"
                     name="collegeName"
                     value={formData.collegeName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors text-sm md:text-base"
                     placeholder="Enter your college/institution name"
                   />
                 </div>
               </div>
 
               {/* Address */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
-                <label className="text-lg font-medium text-gray-700">Address</label>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start">
+                <label className="text-base md:text-lg font-medium text-gray-700">Address</label>
                 <div className="md:col-span-2">
                   <textarea
                     name="address"
@@ -232,18 +232,18 @@ export default function JoinUsPage() {
                     onChange={handleInputChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors resize-none"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors resize-none text-sm md:text-base"
                     placeholder="Enter your complete address"
                   />
                 </div>
               </div>
 
               {/* Submit Button */}
-              <div className="text-center pt-6">
+              <div className="text-center pt-4 md:pt-6">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold py-4 px-12 rounded-lg text-lg hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold py-3 md:py-4 px-8 md:px-12 rounded-lg text-base md:text-lg hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
                 </button>
@@ -251,7 +251,7 @@ export default function JoinUsPage() {
 
               {/* Submit Message */}
               {submitMessage && (
-                <div className={`text-center p-4 rounded-lg mt-4 ${submitMessage.includes('Thank you') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                <div className={`text-center p-3 md:p-4 rounded-lg mt-4 text-sm md:text-base ${submitMessage.includes('Thank you') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
                   {submitMessage}
                 </div>
               )}
