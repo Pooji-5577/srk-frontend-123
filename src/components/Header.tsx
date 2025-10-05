@@ -62,57 +62,57 @@ export default function Header() {
       </div>
 
       {/* Navigation Bar - Desktop */}
-      <div className="bg-blue-600 w-full hidden lg:block">
+      <div className="bg-white/95 backdrop-blur-sm w-full hidden lg:block border-b border-gray-200 shadow-sm">
         <div className="container mx-auto px-4">
-          <nav className="flex items-center justify-center space-x-2 xl:space-x-8 py-4">
+          <nav className="flex items-center justify-center space-x-4 xl:space-x-10 py-5">
             <Link
               href="/"
-              style={{ color: 'white', display: 'block', visibility: 'visible' }}
-              className="!text-white font-bold text-sm xl:text-base hover:text-orange-300 transition-colors duration-200 px-2 xl:px-3 py-2 rounded hover:bg-blue-700"
+              className="relative text-gray-700 font-medium text-sm xl:text-base hover:text-blue-600 transition-colors duration-300 px-3 xl:px-4 py-2 group"
             >
-              HOME
+              <span className="relative z-10">HOME</span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
             </Link>
             <Link
               href="/about"
-              style={{ color: 'white', display: 'block', visibility: 'visible' }}
-              className="!text-white font-bold text-sm xl:text-base hover:text-orange-300 transition-colors duration-200 px-2 xl:px-3 py-2 rounded hover:bg-blue-700"
+              className="relative text-gray-700 font-medium text-sm xl:text-base hover:text-blue-600 transition-colors duration-300 px-3 xl:px-4 py-2 group"
             >
-              ABOUT US
+              <span className="relative z-10">ABOUT US</span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
             </Link>
             <Link
               href="/services"
-              style={{ color: 'white', display: 'block', visibility: 'visible' }}
-              className="!text-white font-bold text-sm xl:text-base hover:text-orange-300 transition-colors duration-200 px-2 xl:px-3 py-2 rounded hover:bg-blue-700"
+              className="relative text-gray-700 font-medium text-sm xl:text-base hover:text-blue-600 transition-colors duration-300 px-3 xl:px-4 py-2 group"
             >
-              SERVICES
+              <span className="relative z-10">SERVICES</span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
             </Link>
             <Link
               href="/join-us"
-              style={{ color: 'white', display: 'block', visibility: 'visible' }}
-              className="!text-white font-bold text-sm xl:text-base hover:text-orange-300 transition-colors duration-200 px-2 xl:px-3 py-2 rounded hover:bg-blue-700"
+              className="relative text-gray-700 font-medium text-sm xl:text-base hover:text-blue-600 transition-colors duration-300 px-3 xl:px-4 py-2 group"
             >
-              JOIN US
+              <span className="relative z-10">JOIN US</span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
             </Link>
             <Link
               href="/links"
-              style={{ color: 'white', display: 'block', visibility: 'visible' }}
-              className="!text-white font-bold text-sm xl:text-base hover:text-orange-300 transition-colors duration-200 px-2 xl:px-3 py-2 rounded hover:bg-blue-700"
+              className="relative text-gray-700 font-medium text-sm xl:text-base hover:text-blue-600 transition-colors duration-300 px-3 xl:px-4 py-2 group"
             >
-              LINKS
+              <span className="relative z-10">LINKS</span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
             </Link>
             <Link
               href="/gallery"
-              style={{ color: 'white', display: 'block', visibility: 'visible' }}
-              className="!text-white font-bold text-sm xl:text-base hover:text-orange-300 transition-colors duration-200 px-2 xl:px-3 py-2 rounded hover:bg-blue-700"
+              className="relative text-gray-700 font-medium text-sm xl:text-base hover:text-blue-600 transition-colors duration-300 px-3 xl:px-4 py-2 group"
             >
-              GALLERY
+              <span className="relative z-10">GALLERY</span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
             </Link>
             <Link
               href="/contact"
-              style={{ color: 'white', display: 'block', visibility: 'visible' }}
-              className="!text-white font-bold text-sm xl:text-base hover:text-orange-300 transition-colors duration-200 px-2 xl:px-3 py-2 rounded hover:bg-blue-700"
+              className="relative text-gray-700 font-medium text-sm xl:text-base hover:text-blue-600 transition-colors duration-300 px-3 xl:px-4 py-2 group"
             >
-              CONTACT US
+              <span className="relative z-10">CONTACT US</span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
             </Link>
           </nav>
         </div>

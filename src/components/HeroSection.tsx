@@ -2,21 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Add your hero images here - you can replace these with your actual image paths
+  // Hero slideshow images - Using paths from public folder
+  // Images are now in: frontend/public/hero/
   const heroImages = [
-    '/hero/slide1.jpg',
-    '/hero/slide2.jpg',
-    '/hero/slide3.jpg',
-    '/hero/slide4.jpg',
-    '/hero/slide5.jpg',
-    '/hero/slide6.jpg',
-    '/hero/slide7.jpg',
+    '/hero/slide1.jpg',  // IMG-20201106-WA0007.jpg
+    '/hero/slide2.jpg',  // IMG-20201106-WA0006.jpg
   ];
 
   // Auto-advance slides every 5 seconds
@@ -41,7 +36,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-600 via-green-500 to-orange-500 text-white overflow-hidden">
+    <section className="relative bg-gradient-to-br from-blue-600 via-green-500 to-orange-500 text-white overflow-hidden h-screen">
       {/* Image Slideshow */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
@@ -51,16 +46,17 @@ export default function HeroSection() {
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <Image
+            {/* Using native img tag for local file access */}
+            <img
               src={image}
               alt={`SRKE Educational Society - Slide ${index + 1}`}
-              fill
-              className="object-cover"
-              priority={index === 0}
+              className="w-full h-full object-cover"
+              style={{ display: 'block' }}
               onError={(e) => {
                 // Fallback to gradient if image fails to load
-                const target = e.target as HTMLImageElement;
+                const target = e.currentTarget;
                 target.style.display = 'none';
+                console.error(`Failed to load image: ${image}`);
               }}
             />
           </div>
@@ -68,7 +64,7 @@ export default function HeroSection() {
       </div>
 
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 bg-black opacity-40"></div>
 
       {/* Previous Button */}
       <button
@@ -105,29 +101,21 @@ export default function HeroSection() {
       </div>
       
       {/* Content */}
-      <div className="relative container mx-auto px-4 py-12 sm:py-16 md:py-20 lg:py-32 z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Main Quote */}
-          <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold mb-6 md:mb-8 leading-tight px-2 drop-shadow-lg">
-            &ldquo;I measure the progress of a community by the degree of progress which women have achieved.&rdquo;
-          </blockquote>
-          
-          {/* Attribution */}
-          <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 md:mb-12 font-medium drop-shadow-lg">
-            - B. R. Ambedkar
-          </p>
-          
+      <div className="relative container mx-auto px-4 h-full flex items-end pb-16 md:pb-24 z-10">
+        <div className="w-full max-w-4xl mx-auto text-center">
           {/* Call to Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center px-4">
             <Link
               href="/donate"
-              className="w-full sm:w-auto bg-accent-500 hover:bg-accent-600 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl sm:min-w-[200px] text-center"
+              className="w-full sm:w-auto text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl sm:min-w-[200px] text-center"
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)', padding: '10px 20px', borderRadius: '5px', border: '1px solid white' }}
             >
               Make a Donation
             </Link>
             <Link
               href="/join-us"
-              className="w-full sm:w-auto bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg text-base md:text-lg transition-all duration-300 transform hover:scale-105 sm:min-w-[200px] text-center"
+              className="w-full sm:w-auto text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg text-base md:text-lg transition-all duration-300 transform hover:scale-105 sm:min-w-[200px] text-center"
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)', padding: '10px 20px', borderRadius: '5px', border: '1px solid white' }}
             >
               Join Our Mission
             </Link>

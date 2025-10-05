@@ -33,7 +33,7 @@ export default function GalleryPage() {
     { id: 20, filename: 'ng20.JPG', category: 'Activities', title: 'Educational Activity 20', description: 'Community educational program' }
   ].map(img => ({
     ...img,
-    url: `https://twlzzpvwmnwdrcuiiysw.supabase.co/storage/v1/object/public/srk/gallery/${img.filename}`,
+    url: `https://ejsddoyqjvbxwzwlulmw.supabase.co/storage/v1/object/public/srkkkk/gallery/${img.filename}`,
     fallback: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yMDAgMTUwQzE3Mi4zODYgMTUwIDE1MCAyMjcuNjE0IDE1MCAyNTVDMTUwIDI4Mi4zODYgMTcyLjM4NiAzMDUgMjAwIDMwNUMyMjcuNjE0IDMwNSAyNTAgMjgyLjM4NiAyNTAgMjU1QzI1MCAyMjcuNjE0IDIyNy42MTQgMTUwIDIwMCAxNTBaIiBmaWxsPSIjOUI5QjlCIi8+CjxwYXRoIGQ9Ik0xNzUgMjI1QzE3NS4wMDEgMjE2LjE2MyAxNzguNTg1IDIwNy42NzEgMTg0LjkzIDIwMS4zMjZDMTkxLjI3NSAxOTQuOTgxIDE5OS43NjcgMTkxLjM5NyAyMDggMTkxLjM5N0MyMTYuMjMzIDE5MS4zOTcgMjI0LjcyNSAxOTQuOTgxIDIzMS4wNyAyMDEuMzI2QzIzNy40MTUgMjA3LjY3MSAyNDAuOTk5IDIxNi4xNjMgMjQxIDIyNUgxNzVaIiBmaWxsPSIjOUI5QjlCIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMzQwIiBmaWxsPSIjOUI5QjlCIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTZweCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U1JLRSBHYWxsZXJ5PC90ZXh0Pgo8L3N2Zz4K'
   }));
 
@@ -153,7 +153,7 @@ export default function GalleryPage() {
             <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Gallery Images from Supabase Storage</h2>
             <p className="text-sm md:text-base text-blue-100 mb-4 md:mb-6 max-w-2xl mx-auto px-4">
               Our gallery showcases vibrant educational activities of SRKE Educational Society. 
-              All {galleryImages.length} images are stored in Supabase storage bucket &lsquo;srk&rsquo; with automatic optimization.
+              All {galleryImages.length} images are stored in Supabase storage bucket &lsquo;srkkkk&rsquo; with automatic optimization.
             </p>
             <div className="flex flex-wrap justify-center gap-3 md:gap-6 text-xs md:text-sm">
               <div className="flex items-center gap-1.5 md:gap-2">

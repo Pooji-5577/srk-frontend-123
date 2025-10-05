@@ -1,12 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://twlzzpvwmnwdrcuiiysw.supabase.co';
+const supabaseUrl = 'https://ejsddoyqjvbxwzwlulmw.supabase.co';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'your-anon-key-here';
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // Gallery storage bucket name
-export const STORAGE_BUCKET = 'srk';
+export const STORAGE_BUCKET = 'srkkkk';
 
 // Helper function to get public URL for stored files
 export const getPublicUrl = (filePath: string) => {
@@ -19,26 +19,26 @@ export const getPublicUrl = (filePath: string) => {
 
 // Gallery images configuration
 export const galleryImages = [
-  { filename: 'sr021.jpg', category: 'Events' },
-  { filename: 'ng6.JPG', category: 'Activities' },
-  { filename: 'ng2.JPG', category: 'Activities' },
-  { filename: 'ng3.JPG', category: 'Activities' },
-  { filename: 'ng4.JPG', category: 'Activities' },
-  { filename: 'ng5.JPG', category: 'Activities' },
-  { filename: 'ng7.JPG', category: 'Activities' },
-  { filename: 'ng8.JPG', category: 'Activities' },
-  { filename: 'ng9.JPG', category: 'Activities' },
-  { filename: 'ng10.JPG', category: 'Activities' },
-  { filename: 'ng11.JPG', category: 'Activities' },
-  { filename: 'ng12.JPG', category: 'Activities' },
-  { filename: 'ng13.JPG', category: 'Activities' },
-  { filename: 'ng14.JPG', category: 'Activities' },
-  { filename: 'ng15.JPG', category: 'Activities' },
-  { filename: 'ng16.JPG', category: 'Activities' },
-  { filename: 'ng17.JPG', category: 'Activities' },
-  { filename: 'ng18.JPG', category: 'Activities' },
-  { filename: 'ng19.JPG', category: 'Activities' },
-  { filename: 'ng20.JPG', category: 'Activities' }
+  { filename: 'srk 20.jpg', category: 'Activities' },
+  { filename: 'srk 21.jpg', category: 'Activities' },
+  { filename: 'srk 22.jpg', category: 'Activities' },
+  { filename: 'srk 23.jpg', category: 'Activities' },
+  { filename: 'srk 24.jpg', category: 'Activities' },
+  { filename: 'srk 25.jpg', category: 'Activities' },
+  { filename: 'srk 27.jpg', category: 'Activities' },
+  { filename: 'srk 28.jpg', category: 'Activities' },
+  { filename: 'srk 29.jpg', category: 'Activities' },
+  { filename: 'srk 30.jpg', category: 'Activities' },
+  { filename: 'srk 32.jpg', category: 'Activities' },
+  { filename: 'srk 35.jpg', category: 'Activities' },
+  { filename: 'srk 36.jpg', category: 'Activities' },
+  { filename: 'srk 37.jpg', category: 'Activities' },
+  { filename: 'srk 38.jpg', category: 'Activities' },
+  { filename: 'srk 39.JPG', category: 'Activities' },
+  { filename: 'srk 40.JPG', category: 'Activities' },
+  { filename: 'srk 42.JPG', category: 'Activities' },
+  { filename: 'srk 43.JPG', category: 'Activities' },
+  { filename: 'srk 44.JPG', category: 'Activities' }
 ];
 
 export const getGalleryImageUrl = (filename: string) => {
