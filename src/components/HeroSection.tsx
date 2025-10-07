@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function HeroSection() {
@@ -46,16 +47,14 @@ export default function HeroSection() {
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            {/* Using native img tag for local file access */}
-            <img
+            {/* Using Next.js Image component for optimized loading */}
+            <Image
               src={image}
               alt={`SRKE Educational Society - Slide ${index + 1}`}
-              className="w-full h-full object-cover"
-              style={{ display: 'block' }}
-              onError={(e) => {
-                // Fallback to gradient if image fails to load
-                const target = e.currentTarget;
-                target.style.display = 'none';
+              fill
+              className="object-cover"
+              priority={index === 0}
+              onError={() => {
                 console.error(`Failed to load image: ${image}`);
               }}
             />

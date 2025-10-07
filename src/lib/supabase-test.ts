@@ -79,9 +79,10 @@ export async function testSupabaseConnection(): Promise<ConnectionTestResult> {
       if (buckets && buckets.length > 0) {
         console.log('  Available buckets:', buckets.map(b => b.name).join(', '));
       }
-    } catch (bucketError: any) {
-      console.error('✗ Error accessing storage:', bucketError.message);
-      result.details.error = bucketError.message;
+    } catch (bucketError) {
+      const error = bucketError as Error;
+      console.error('✗ Error accessing storage:', error.message);
+      result.details.error = error.message;
     }
 
     // Check 5: Can list files in gallery folder
@@ -102,8 +103,9 @@ export async function testSupabaseConnection(): Promise<ConnectionTestResult> {
       if (files && files.length > 0) {
         console.log('  Sample files:', files.slice(0, 3).map(f => f.name).join(', '));
       }
-    } catch (filesError: any) {
-      console.warn('⚠ Could not list files (bucket might be empty or inaccessible):', filesError.message);
+    } catch (filesError) {
+      const error = filesError as Error;
+      console.warn('⚠ Could not list files (bucket might be empty or inaccessible):', error.message);
     }
 
     // Overall success check
@@ -119,9 +121,10 @@ export async function testSupabaseConnection(): Promise<ConnectionTestResult> {
       console.log('❌ Supabase connection has issues. Check the details above.');
     }
 
-  } catch (error: any) {
-    console.error('❌ Connection test failed:', error.message);
-    result.details.error = error.message;
+  } catch (error) {
+    const err = error as Error;
+    console.error('❌ Connection test failed:', err.message);
+    result.details.error = err.message;
   }
 
   return result;
@@ -164,10 +167,11 @@ export async function testImageAccess(imagePath: string): Promise<{
       url: data.publicUrl,
       error: response.ok ? undefined : `HTTP ${response.status}: ${response.statusText}`,
     };
-  } catch (error: any) {
+  } catch (error) {
+    const err = error as Error;
     return {
       accessible: false,
-      error: error.message,
+      error: err.message,
     };
   }
 }
@@ -202,8 +206,9 @@ export async function getBucketInfo() {
       galleryFileCount: files?.length || 0,
       files: files?.map(f => f.name) || [],
     };
-  } catch (error: any) {
-    return { error: error.message };
+  } catch (error) {
+    const err = error as Error;
+    return { error: err.message };
   }
 }
 
@@ -233,9 +238,13 @@ export async function runFullDiagnostics() {
 
 // If you want to run this directly in the browser console:
 if (typeof window !== 'undefined') {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (window as any).testSupabase = testSupabaseConnection;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (window as any).supabaseDiagnostics = runFullDiagnostics;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (window as any).testImage = testImageAccess;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (window as any).bucketInfo = getBucketInfo;
   
   console.log('🔧 Supabase test utilities loaded! Available commands:');

@@ -85,8 +85,9 @@ export async function uploadImage(
       path: data.path,
       url: urlData.publicUrl,
     };
-  } catch (error: any) {
-    return { success: false, error: error.message };
+  } catch (error) {
+    const err = error as Error;
+    return { success: false, error: err.message };
   }
 }
 
@@ -135,8 +136,9 @@ export async function deleteImage(path: string): Promise<{ success: boolean; err
     }
 
     return { success: true };
-  } catch (error: any) {
-    return { success: false, error: error.message };
+  } catch (error) {
+    const err = error as Error;
+    return { success: false, error: err.message };
   }
 }
 
@@ -164,8 +166,9 @@ export async function listImages(folder: string) {
       success: true,
       files: data || [],
     };
-  } catch (error: any) {
-    return { success: false, error: error.message };
+  } catch (error) {
+    const err = error as Error;
+    return { success: false, error: err.message };
   }
 }
 
@@ -193,11 +196,12 @@ export async function checkUploadPermission(): Promise<{
       canUpload: !!user,
       isAuthenticated: !!user,
     };
-  } catch (error: any) {
+  } catch (error) {
+    const err = error as Error;
     return { 
       canUpload: false, 
       isAuthenticated: false, 
-      error: error.message 
+      error: err.message 
     };
   }
 }
@@ -221,8 +225,9 @@ export async function getBucketStats() {
           (heroResult.success ? heroResult.files?.length || 0 : 0),
       },
     };
-  } catch (error: any) {
-    return { success: false, error: error.message };
+  } catch (error) {
+    const err = error as Error;
+    return { success: false, error: err.message };
   }
 }
 

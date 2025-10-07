@@ -1,6 +1,9 @@
 /**
- * Supabase Admin Panel Component
- * 
+ * Supabase Admin Panel Compon  const [bucketStats, setBucketStats] = useState<BucketStats | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [uploadFolder, setUploadFolder] = useState<'gallery' | 'hero'>('gallery');
+  const [uploadResults, setUploadResults] = useState<UploadResult[]>([]);
+  const [galleryImages, setGalleryImages] = useState<ImageFile[]>([]); * 
  * This component provides a UI to:
  * 1. Test Supabase connection
  * 2. View bucket status
@@ -15,29 +18,35 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { 
   testSupabaseConnection, 
-  getBucketInfo,
   runFullDiagnostics,
   type ConnectionTestResult 
 } from '@/lib/supabase-test';
 import { 
   uploadMultipleImages, 
   listImages,
-  deleteImage,
   getBucketStats,
   type UploadResult 
 } from '@/lib/supabase-upload';
 
+interface BucketStats {
+  success: boolean;
+  stats?: {
+    galleryImages: number;
+    heroImages: number;
+    totalImages: number;
+  };
+  error?: string;
+}
+
 export default function SupabaseAdminPanel() {
   const [testResult, setTestResult] = useState<ConnectionTestResult | null>(null);
-  const [bucketInfo, setBucketInfo] = useState<any>(null);
-  const [bucketStats, setBucketStats] = useState<any>(null);
+  const [bucketStats, setBucketStats] = useState<BucketStats | null>(null);
   const [loading, setLoading] = useState(false);
   const [uploadFolder, setUploadFolder] = useState<'gallery' | 'hero'>('gallery');
   const [uploadResults, setUploadResults] = useState<UploadResult[]>([]);
-  const [galleryImages, setGalleryImages] = useState<any[]>([]);
+  const [galleryImages, setGalleryImages] = useState<Array<{ name: string; id: string; metadata?: Record<string, unknown> }>>([]);
 
   // Test connection on mount
   useEffect(() => {
@@ -49,9 +58,6 @@ export default function SupabaseAdminPanel() {
     try {
       const result = await testSupabaseConnection();
       setTestResult(result);
-
-      const info = await getBucketInfo();
-      setBucketInfo(info);
 
       const stats = await getBucketStats();
       setBucketStats(stats);
@@ -183,15 +189,15 @@ export default function SupabaseAdminPanel() {
             <div className="grid grid-cols-3 gap-4">
               <div className="bg-blue-50 p-4 rounded">
                 <p className="text-gray-600 text-sm">Gallery Images</p>
-                <p className="text-3xl font-bold text-blue-600">{bucketStats.stats.galleryImages}</p>
+                <p className="text-3xl font-bold text-blue-600">{bucketStats.stats?.galleryImages || 0}</p>
               </div>
               <div className="bg-green-50 p-4 rounded">
                 <p className="text-gray-600 text-sm">Hero Images</p>
-                <p className="text-3xl font-bold text-green-600">{bucketStats.stats.heroImages}</p>
+                <p className="text-3xl font-bold text-green-600">{bucketStats.stats?.heroImages || 0}</p>
               </div>
               <div className="bg-purple-50 p-4 rounded">
                 <p className="text-gray-600 text-sm">Total Images</p>
-                <p className="text-3xl font-bold text-purple-600">{bucketStats.stats.totalImages}</p>
+                <p className="text-3xl font-bold text-purple-600">{bucketStats.stats?.totalImages || 0}</p>
               </div>
             </div>
           </div>
@@ -300,7 +306,9 @@ export default function SupabaseAdminPanel() {
                 <div key={index} className="border rounded p-2">
                   <p className="text-xs text-gray-600 mb-1 truncate">{image.name}</p>
                   <p className="text-xs text-gray-400">
-                    {(image.metadata?.size / 1024).toFixed(0)} KB
+                    {image.metadata && typeof image.metadata.size === 'number' 
+                      ? ((image.metadata.size as number) / 1024).toFixed(0) 
+                      : '0'} KB
                   </p>
                 </div>
               ))}
@@ -309,7 +317,7 @@ export default function SupabaseAdminPanel() {
 
           {galleryImages.length === 0 && (
             <p className="text-gray-500 text-center py-8">
-              No images loaded. Click "Load Images" to view gallery contents.
+              No images loaded. Click &quot;Load Images&quot; to view gallery contents.
             </p>
           )}
         </div>
